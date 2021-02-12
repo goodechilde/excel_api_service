@@ -32,5 +32,6 @@ Route.post('/login', 'AuthController.login')
 Route.group(() => {
 
   Route.resource('/users', 'UsersController')
+  Route.get('/excel/demos', 'ExcelDemosController.index')
 
 }).middleware('auth').prefix('/api')
