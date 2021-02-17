@@ -1,0 +1,60 @@
+{
+  "sheets": [
+    {
+      "name": "Sheet One",
+      "meta":
+        {
+          "autoFilter": true,
+          "fontSize":  14,
+          "headerBold": true,
+          "headerBackgroundColor": "FF94AFFF",
+          "summariesBold": true,
+          "summariesBackgroundColor": "FF94AFFF"
+        }
+      ,
+      "headers": [
+        { "header": "Id", "key": "id", "width": 10, "style": { "numFmt": "number" } },
+        { "header": "Names", "key": "name", "width": 32 },
+        { "header": "Date of Birth", "key": "dob", "width": 10 },
+        { "header": "Salary", "key": "salary", "width": 20, "style": { "numFmt": "money" } }
+      ],
+      "rows": [
+        { "id": 1, "name": "Sean Young", "dob": "1975/10/01", "salary": 100000.50 },
+        { "id": 2, "name": "James", "dob": "1960/06/01", "salary": 60000.00 },
+        { "id": 3, "name": "Lola", "dob": "2007/07/30", "salary": 300000.75 },
+        { "id": 4, "name": "Christina", "dob": "1976/07/01", "salary": 450000.50 },
+        { "id": 5, "name": "Christina", "dob": "1976/07/01", "salary": 450000.50 },
+        { "id": 6, "name": "Christina", "dob": "1976/07/01", "salary": 450000.50 }
+      ]
+    },
+    {
+      "name": "Sheet Two",
+      "meta": {
+          "autoFilter": true,
+          "fontSize":  14,
+          "headerBold": true,
+          "headerBackgroundColor": "FF94AFFF",
+          "summariesBold": true,
+          "summariesBackgroundColor": "FF94AFFF"
+        },
+      "headers": [
+        { "header": "Id", "key": "id", "width": 10, "style": { "numFmt": "number" } },
+        { "header": "Full Names", "key": "name", "width": 32 },
+        { "header": "Date of Birth", "key": "dob", "width": 10, "style": { "numFmt": "date" } },
+        { "header": "Salary", "key": "salary", "width": 20, "style": { "numFmt": "money" } },
+        { "header": "Tax Rate", "key": "taxrate", "width": 20, "style": { "numFmt": "percentage" } },
+        { "header": "Taxes", "key": "taxes", "width": 20, "style": { "numFmt": "money", "font": { "bold":  true} } },
+        { "header": "Misc", "key": "misc", "width": 20, "style": { "numFmt": "money" } }
+      ],
+      "rows": [
+        { "id": 1, "name": "Sean Young", "dob": "1975/10/01", "salary": 100000.50, "taxrate": 0.01, "taxes": { "formula": true, "type": "multiply", "column1": "salary", "column2": "taxrate" }, "misc": { "formula": true, "type": "addition", "column1": "salary", "column2": "taxes" } },
+        { "id": 2, "name": "James", "dob": "1960/06/01", "salary": 60000.00, "taxrate": 0.01, "taxes": { "formula": true, "type": "multiply", "column1": "salary", "column2": "taxrate" } },
+        { "id": 3, "name": "Lola", "dob": "2007/07/30", "salary": -300000.75, "taxrate": 0.01, "taxes": { "formula": true, "type": "multiply", "column1": "salary", "column2": "taxrate" } },
+        { "id": 4, "name": "Christina", "dob": "1976/07/01", "salary": 450000.50, "taxrate": 0.01, "taxes": { "formula": true, "type": "multiply", "column1": "salary", "column2": "taxrate" } }
+      ],
+      "summaries": [
+        { "id": "Totals", "name": "", "dob": { "calculation": "average"}, "salary": { "calculation": "average"}, "taxrate": { "calculation": "average"}, "taxes": { "formula": true, "type": "multiply", "column1": "salary", "column2": "taxrate" }, "misc": "" }
+      ]
+    }
+  ]
+}
